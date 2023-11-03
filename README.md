@@ -7,7 +7,7 @@ Repositório para concentração de estudos e implementações de autômatos uti
 Para testar as implementações desenvolvidas nestes repositório, o seguinte comando pode ser utilizado.
 
 ```go
-go run impl.go
+go run impl1/afd1/afd1.go
 ```
 
 Caso não esteja instalado o Go na máquina local, também é possível utilizar o site [Go Playground](https://go.dev/play/).
