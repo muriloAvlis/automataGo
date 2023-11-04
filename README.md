@@ -2,6 +2,10 @@
 
 Repositório para concentração de estudos e implementações de autômatos utilizando a linguagem Go
 
+## Requisitos
+
+- Go (1.21+)
+
 ## Iniciando
 
 Para testar as implementações desenvolvidas nestes repositório, o seguinte comando pode ser utilizado.
