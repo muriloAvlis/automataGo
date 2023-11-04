@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// definição do autômato
+// definição do tipo autômato
 type automata struct {
 	alphabet    []string         // alfabeto de símbolos de entrada
 	states      map[string]state // conj. finito de estados possíveis do autômato
@@ -13,6 +13,7 @@ type automata struct {
 	finalStates map[string]state // conj. de estados finais
 }
 
+// definição do tipo estado
 type state struct {
 	name      string            // nome do estado
 	transFunc map[string]string // função de transição do estado
@@ -26,6 +27,9 @@ func main() {
 
 	// converte entrada em uma lista (cada símbolo do alfabeto -> 1 valor da lista)
 	sliceInputs := strings.Split(inputs, "")
+
+	// obs: caso não funcione via scanf tente definir manualmente:
+	// sliceInputs := []strings{1,0,0}
 
 	// declaração dos estados do autômato
 	q0 := state{
