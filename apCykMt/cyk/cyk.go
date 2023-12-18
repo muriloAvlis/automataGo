@@ -39,6 +39,49 @@ func main() {
 	grammar.cyk(sliceInputs)
 }
 
-func (g *glc) cyk(input []string) {
+func (g *glc) cyk(inputs []string) {
+	V1C := []string{}
+	VLC := []string{}
+	for _, input := range inputs {
+		for k, v := range g.productions {
+			for _, prod := range v {
+				if prod == input {
+					V1C = append(V1C, k)
+				}
+			}
+		}
+	}
 
+	for i, c := range V1C {
+		if i < len(V1C)-1 {
+			var temp string
+			word := c + V1C[i+1]
+			for k, v := range g.productions {
+				for _, prod := range v {
+					if prod == word {
+						temp += k
+					}
+				}
+			}
+			VLC = append(VLC, temp)
+		}
+	}
+
+	fmt.Println(VLC[:len(VLC)-3])
+	fmt.Println(VLC[:len(VLC)-2])
+	fmt.Println(VLC[:len(VLC)-1])
+	fmt.Println(VLC)
+	fmt.Println(V1C)
+
+	test := strings.Join(VLC[:len(VLC)-3], "")
+	testSplit := strings.Split(test, "")
+
+	for _, v := range testSplit {
+		if v == g.root {
+			fmt.Println("Entrada aceita!")
+			return
+		}
+	}
+
+	fmt.Println("Entrada rejeitada!")
 }
